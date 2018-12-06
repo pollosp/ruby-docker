@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+echo "unit testing"
+docker build . --target test  -t sinatra
 echo "Lintering"
 cat Dockerfile | docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 --ignore SC2035 -
 echo "Structure tests"
